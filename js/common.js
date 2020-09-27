@@ -5,6 +5,7 @@
         $('.main_s1_p1').stop().animate({
             width: '100%'
         }, 1000)
+        $('.main_s1_p2').hide()
     })
 
 
