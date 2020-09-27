@@ -34,15 +34,16 @@ body { font-family: 'Montserrat'; }
     background: #000; }
 .main_step1 { width: 100%;
     background: #fff; }
+.main_step1 .main_s1_p2 { width: 50%; 
+    height: 650px;
+    background: #eee;
+    float: right;
+    overflow: hidden; }
 .main_step1 .main_s1_p1 { width: 50%;
     height: 650px;
     background: #78aca8;
     float: left;
     position: relative; }
-.main_step1 .main_s1_p2 { width: 50%; 
-    height: 650px;
-    background: #eee;
-    float: left; }
 .main_s1_p1 h1 { font-size: 100px;
     text-align: right;
     position: absolute;
