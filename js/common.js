@@ -7,22 +7,22 @@
         //   $(".main_s1_p1").animate({ width: "+=" + 1 + "%" }, 1);
         // }
 
-        // var flag=true
-        // $(".main_s1_p1 > h1").on("click", function () {
-        //     if ( flag ) {
-        //         for (var i = 1; i < 52; i++) {
-        //             $(".main_s1_p2").animate({ width: "-=" + 1 + "%" }, 1);
-        //             $(".main_s1_p1").animate({ width: "+=" + 1 + "%" }, 1);
-        //           }
-        //         flag = false
-        //     } else if (!flag) {
-        //         for (var i = 52; i < 1; i--) {
-        //             $(".main_s1_p1").animate({ width: "-=" + 1 + "%" }, 1);
-        //             $(".main_s1_p2").animate({ width: "+=" + 1 + "%" }, 1);
-        //         }
-        //         flag=true
-        //     }
-        // });
+        var flag=true
+        $(".main_s1_p1 > h1").on("click", function () {
+            if ( flag ) {
+                for (var i = 1; i < 52; i++) {
+                    $(".main_s1_p2").animate({ width: "-=" + 1 + "%" }, 1);
+                    $(".main_s1_p1").animate({ width: "+=" + 1 + "%" }, 1);
+                  }
+                flag = false
+            } else if (!flag) {
+                for (var i = 52; i < 1; i--) {
+                    $(".main_s1_p1").animate({ width: "-=" + 1 + "%" }, 1);
+                    $(".main_s1_p2").animate({ width: "+=" + 1 + "%" }, 1);
+                }
+                flag=true
+            }
+        });
 
         // $('.main_s1_p1').animate({
         //     width:'100%'
