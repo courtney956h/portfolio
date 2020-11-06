@@ -3,6 +3,7 @@
     // h1 클릭시 이벤트
     $(".main_s1_p1 > h1 > a").on("click", function(e) {
         e.preventDefault()
+        $('.about_container').toggleClass('on')
         $(".main_s1_p1").toggleClass('on')
         if ( $('.main_s1_p1').hasClass('on') ) {
             $('.main_s1_p1').animate({
