@@ -129,9 +129,13 @@ body { font-family: 'Montserrat'; }
 .down_arrow .link_text { color: #fff;
     font-family: 'Roboto';
     font-size: 13px; }
-.down_arrow .link_line:after { animation: animation-line 2s both 1s infinite; }
-.down_arrow .link_arrow span:after { animation: animation-arrow 2s both infinite;
-    animation-delay: 1.5s; }
+.down_arrow .link_line:after { animation: animation-line 2s 1s both infinite; }
+.down_arrow .link_arrow span:after { 
+    animation-name: animation-arrow, animation-arrow-once ;
+    animation-duration: 2s, 2s;
+    animation-delay: 3s, 1s;
+    animation-fill-mode: both, none;
+    animation-iteration-count: infinite, 1; }
     
 @keyframes animation-line {
     0% { left: 80px; }
@@ -139,9 +143,14 @@ body { font-family: 'Montserrat'; }
 }
 @keyframes animation-arrow {
     0% { width: 0; }
+    80% { width: 0; }
     100% { width: 100%; }
 }
-
+@keyframes animation-arrow-once {
+    0% { width: 0; }
+    80% { width: 0; }
+    100% { width: 100%; }
+}
 
 
 
@@ -166,7 +175,9 @@ body { font-family: 'Montserrat'; }
 
     
 /* about me */
-.about_container { padding: 200px 150px;
+.about_container { display: none; }
+.about_container.on { display: block; }
+.about_detail { padding: 200px 150px;
     display: flex; }
 .about_h { position: relative; 
     width: 15%;}
@@ -230,7 +241,7 @@ body { font-family: 'Montserrat'; }
     padding: 200px 30px 0; 
     margin-left: 50px;
     display: flex;}
-.about_content ul li { padding-bottom: 50px; }
+.about_content ul li { padding: 0 15px 50px; }
 .about_content ul li h3 { font-size: 22px;
     color: #000;
     padding-bottom: 20px; }
@@ -244,11 +255,66 @@ body { font-family: 'Montserrat'; }
     padding-bottom: 20px; }
 
 
+.skills { padding: 0 15px; }
+.skills .skillContainer { display: flex; }
+.skillContainer .program { padding: 0 10px;
+    width: 20%; }
+.skillContainer .score { margin: 0 auto;
+    height: 180px;
+    width: 44px;
+    background: #fff;
+    border: 2px solid #dedede;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative; }
+.skillContainer .myscore { height: 0%; 
+    width: 40px; 
+    display: block; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: absolute;
+    bottom: 0; }
+.skillContainer span { font-size: 12px;
+    text-align: center; 
+    display: block;
+    padding-top: 10px; }
 
 
-
-
-
-
+.skillContainer .photoshop .myscore { 
+    background: #e77a5b; 
+    animation: photoshopscore 1s both; }
+.skillContainer .illustrator .myscore { 
+    background: #e77a5b; 
+    animation: illustratorscore 1s both 0.5s; }
+.skillContainer .indesign .myscore { 
+    background: #e77a5b; 
+    animation: indesignscore 1s both 1s; }
+.skillContainer .premiere .myscore { 
+    background: #e77a5b; 
+    animation: premierescore 1s both 1.5s; }
+.skillContainer .rhino .myscore { 
+    background: #e77a5b; 
+    animation: rhinoscore 1s both 2s; }
+    
+@keyframes photoshopscore {
+    0% { height : 0% }
+    100% { height: 90%; }
+}
+@keyframes illustratorscore {
+    0% { height : 0% }
+    100% { height: 90%; }
+}
+@keyframes indesignscore {
+    0% { height : 0% }
+    100% { height: 70%; }
+}
+@keyframes premierescore {
+    0% { height : 0% }
+    100% { height: 70%; }
+}
+@keyframes rhinoscore {
+    0% { height : 0% }
+    100% { height: 50%; }
+}
 
 
