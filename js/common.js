@@ -3,8 +3,9 @@
     // h1 클릭시 이벤트
     $(".main_s1_p1 > h1 > a").on("click", function(e) {
         e.preventDefault()
-        $('.about_container').toggleClass('on')
         $(".main_s1_p1").toggleClass('on')
+        $('.about_container').toggleClass('on')
+        $('.portfolio_container').toggleClass('on')
         if ( $('.main_s1_p1').hasClass('on') ) {
             $('.main_s1_p1').animate({
                 width: '100%'
@@ -51,21 +52,27 @@
        
     });
 
-    // 마우스 휠
-    $('.section').on('mousewheel', function(e, wh){
-        prev = $(this).prev().offset().top
-        next = $(this).next().offset().top
-        if ( wh > 0 ) {
-           $('html, body').stop().animate({
-               scrollTop: prev
-           }, 800, 'linear')
-        } else if ( wh < 0 ) {
+    // // 섹션에 마우스휠 이벤트 연결
+    $(".section").on("mousewheel", function (event, delta) {
+        // 마우스 휠 올릴때
+        if (delta > 0) {
+            var prev = $(this).prev().offset().top
+            $('html, body').stop().animate({
+                scrollTop: prev
+            }, 1000)
+        // 마우스 휠 내릴때
+        } else if (delta < 0) {
+            var next = $(this).next().offset().top
             $('html, body').stop().animate({
                 scrollTop: next
-            }, 800, 'linear')
+            }, 1000)
         }
+    });
 
+    // nav 클릭시 current 유지
+    $('#footer .nav li a').on('click', function() {
+        $('#footer .nav li a.current').removeClass('current')
+        $(this).addClass('current')
     })
-
 
 })(jQuery)
